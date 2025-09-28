@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>謎解きサンプル</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; }
+  input { padding: 5px; font-size: 16px; }
+  button { padding: 5px 10px; font-size: 16px; }
+  #result { margin-top: 20px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h2>問題1</h2>
+<p>次の文字列を逆さにすると何になる？<br>
+<em>「nohtyP」</em></p>
+
+<input type="text" id="answer" placeholder="答えを入力">
+<button onclick="checkAnswer()">送信</button>
+
+<div id="result"></div>
+
+<script>
+function checkAnswer() {
+    const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+    const correctAnswer = "python"; // 正解
+    const resultDiv = document.getElementById("result");
+
+    if(userAnswer === correctAnswer) {
+        resultDiv.innerHTML = '正解です！次のページはこちら: <a href="https://www.notion.so/次のページURL" target="_blank">Notionページへ</a>';
+    } else {
+        resultDiv.textContent = '不正解です。もう一度試してください。';
+    }
+}
+</script>
+
+</body>
+</html>
